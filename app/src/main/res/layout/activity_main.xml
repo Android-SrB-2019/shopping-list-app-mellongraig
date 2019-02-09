@@ -94,6 +94,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:text="Pick Item"
+        android:onClick="pickNewItem"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
