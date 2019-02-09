@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">Shopping List</string>
+    <string name="shop_rice" />
+    <string name="shop_pasta" />
+    <string name="shop_apples" />
+    <string name="shop_oranges" />
+    <string name="shop_wheat" />
+    <string name="shop_flour" />
+    <string name="shop_cereal" />
+    <string name="shop_tomatoes" />
+    <string name="shop_tuna" />
+    <string name="shop_salmon" />
+    <string name="pick_item">Pick Item</string>
+    <string name="add_rice">Rice</string>
+    <string name="add_pasta">Pasta</string>
+    <string name="add_apples">Apples</string>
+    <string name="add_oranges">Oranges</string>
+    <string name="add_wheat">Wheat</string>
+    <string name="add_flour">Flour</string>
+    <string name="add_cereal">Cereal</string>
+    <string name="add_tomatoes">Tomatoes</string>
+    <string name="add_tuna">Tuna</string>
+    <string name="add_salmon">Salmon</string>
 </resources>
