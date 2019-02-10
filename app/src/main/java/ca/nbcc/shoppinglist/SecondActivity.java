@@ -15,7 +15,7 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        checkOutItem = findViewById(R.id.check_out);
+        checkOutItem = (TextView)findViewById(R.id.check_out);
     }
 
     public void shopGroceryStoreItem(View view) {
