@@ -3,12 +3,14 @@ package ca.nbcc.shoppinglist;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     public static final int TEXT_REQUEST = 1;
+    private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
     //my common ten shopping items
     public static final String RICE = "rice";
@@ -47,9 +49,56 @@ public class MainActivity extends AppCompatActivity {
     private int salmon = 0;
 
     @Override
+    protected void onStart(){
+        super.onStart();
+        Log.d(LOG_TAG, "My shopping activity has started");
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState){
+        super.onSaveInstanceState(outState);
+        outState.putInt(RICE, rice);
+        outState.putInt(PASTA, pasta);
+        outState.putInt(APPLES, apples);
+        outState.putInt(ORANGES, oranges);
+        outState.putInt(WHEAT, wheat);
+        outState.putInt(FLOUR, flour);
+        outState.putInt(CEREAL, cereal);
+        outState.putInt(TOMATOES, tomatoes);
+        outState.putInt(TUNA, tuna);
+        outState.putInt(SALMON, salmon);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Log.d(LOG_TAG, "Creating shopping activity...");
+
+        add_rice = findViewById(R.id.shop_rice);
+        add_pasta = findViewById(R.id.shop_pasta);
+        add_apples = findViewById(R.id.shop_apples);
+        add_oranges = findViewById(R.id.shop_oranges);
+        add_wheat = findViewById(R.id.shop_wheat);
+        add_flour = findViewById(R.id.shop_flour);
+        add_cereal = findViewById(R.id.shop_cereal);
+        add_tomatoes = findViewById(R.id.shop_tomatoes);
+        add_tuna = findViewById(R.id.shop_tuna);
+        add_salmon = findViewById(R.id.shop_salmon);
+
+        if(savedInstanceState != null){
+            rice = savedInstanceState.getInt(RICE);
+            pasta = savedInstanceState.getInt(PASTA);
+            apples = savedInstanceState.getInt(APPLES);
+            oranges = savedInstanceState.getInt(ORANGES);
+            wheat = savedInstanceState.getInt(WHEAT);
+            flour = savedInstanceState.getInt(FLOUR);
+            cereal = savedInstanceState.getInt(CEREAL);
+            tomatoes = savedInstanceState.getInt(TOMATOES);
+            tuna = savedInstanceState.getInt(TUNA);
+            salmon = savedInstanceState.getInt(SALMON);
+        }
     }
 
     public void pickNewItem(View view) {
@@ -67,6 +116,9 @@ public class MainActivity extends AppCompatActivity {
                     for(int i = 0; i < shopping.length; i++){
                         if(shopping.contains(RICE)){
                             rice += 1;
+                        }
+                        else if(shopping.contains(PASTA)){
+                            pasta += 1;
                         }
                     }
                 }
