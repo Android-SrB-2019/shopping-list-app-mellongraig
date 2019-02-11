@@ -99,6 +99,25 @@ public class MainActivity extends AppCompatActivity {
             tuna = savedInstanceState.getInt(TUNA);
             salmon = savedInstanceState.getInt(SALMON);
         }
+
+        initialize();
+    }
+
+    public void initialize(){
+        try{
+            add_rice.setText(Integer.valueOf(rice) + " Rice");
+            add_pasta.setText(Integer.valueOf(pasta) + " Pasta");
+            add_apples.setText(Integer.valueOf(apples) + " Apples");
+            add_oranges.setText(Integer.valueOf(oranges) + " Oranges");
+            add_wheat.setText(Integer.valueOf(wheat) + " Wheat");
+            add_flour.setText(Integer.valueOf(flour) + " Flour");
+            add_cereal.setText(Integer.valueOf(cereal) + " Cereal");
+            add_tomatoes.setText(Integer.valueOf(tomatoes) + " Tomatoes");
+            add_tuna.setText(Integer.valueOf(tuna) + " Tuna");
+            add_salmon.setText(Integer.valueOf(salmon) + " Salmon");
+        } catch (Exception e){
+            e.getMessage();
+        }
     }
 
     public void pickNewItem(View view) {
@@ -113,14 +132,41 @@ public class MainActivity extends AppCompatActivity {
                 if(resultCode == RESULT_OK){
                     String shopping = data.getStringExtra(SecondActivity.EXTRA_REPLY);
 
-                    for(int i = 0; i < shopping.length; i++){
+                    for(int i = 0; i < shopping.length(); i++){
                         if(shopping.contains(RICE)){
                             rice += 1;
                         }
                         else if(shopping.contains(PASTA)){
                             pasta += 1;
                         }
+                        else if(shopping.contains(APPLES)){
+                            apples += 1;
+                        }
+                        else if(shopping.contains(ORANGES)){
+                            oranges += 1;
+                        }
+                        else if(shopping.contains(WHEAT)){
+                            wheat += 1;
+                        }
+                        else if(shopping.contains(FLOUR)){
+                            flour += 1;
+                        }
+                        else if(shopping.contains(CEREAL)){
+                            cereal += 1;
+                        }
+                        else if(shopping.contains(TOMATOES)){
+                            tomatoes += 1;
+                        }
+                        else if(shopping.contains(TUNA)){
+                            tuna += 1;
+                        }
+                        else if(shopping.contains(SALMON)){
+                            salmon += 1;
+                        }
                     }
+
+                    //recall the method
+                    initialize();
                 }
             }
         } catch(Exception e){
