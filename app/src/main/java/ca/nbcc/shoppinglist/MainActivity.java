@@ -173,4 +173,34 @@ public class MainActivity extends AppCompatActivity {
             e.getMessage();
         }
     }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        Log.d(LOG_TAG, "Shopping activity list paused");
+    }
+
+    @Override
+    protected void onRestart(){
+        super.onRestart();
+        Log.d(LOG_TAG, "Shopping activity list restarted");
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        Log.d(LOG_TAG, "Shopping activity list resumed");
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        Log.d(LOG_TAG, "Shopping activity list stopped");
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        Log.d(LOG_TAG, "Shopping activity list destroyed");
+    }
 }
