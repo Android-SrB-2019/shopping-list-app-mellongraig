@@ -11,88 +11,88 @@
         android:id="@+id/shop_rice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/shop_rice" />
 
     <TextView
         android:id="@+id/shop_pasta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/shop_pasta" />
 
     <TextView
         android:id="@+id/shop_apples"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/shop_apples" />
 
     <TextView
         android:id="@+id/shop_oranges"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/shop_oranges" />
 
     <TextView
         android:id="@+id/shop_wheat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/shop_wheat" />
 
     <TextView
         android:id="@+id/shop_flour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/shop_flour" />
 
     <TextView
         android:id="@+id/shop_cereal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/shop_cereal" />
 
     <TextView
         android:id="@+id/shop_tomatoes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/shop_tomatoes" />
 
     <TextView
         android:id="@+id/shop_tuna"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/shop_tuna" />
 
     <TextView
         android:id="@+id/shop_salmon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/shop_salmon" />
 
     <Button
         android:id="@+id/button_add_newitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/pick_item"
         android:onClick="pickNewItem"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -102,6 +102,5 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
 
 </LinearLayout>
