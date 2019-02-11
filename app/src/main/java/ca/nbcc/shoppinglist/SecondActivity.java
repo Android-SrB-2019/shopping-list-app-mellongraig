@@ -9,12 +9,16 @@ import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity {
 
+    //global reply and log
     public static final String EXTRA_REPLY = "ca.nbcc.shoppinglist.extra.REPLY";
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
+
+    //placeholder
     private TextView checkOutItem;
 
     @Override
     protected void onStart(){
+        //starts this activity
         super.onStart();
         Log.d(LOG_TAG, "Second activity check has started");
     }
@@ -28,6 +32,7 @@ public class SecondActivity extends AppCompatActivity {
 
     public void shopGroceryStoreItem(View view) {
         //I use a switch case statement for which item to check out
+        //a default will be used if the user clicks nothing
         switch (view.getId()) {
             case R.id.add_rice:
                 checkOutList(MainActivity.RICE);
@@ -66,6 +71,7 @@ public class SecondActivity extends AppCompatActivity {
 
     public void checkOutList(String total){
         try {
+            //reply and terminate this activity
             Intent checkout = new Intent();
             checkout.putExtra(EXTRA_REPLY, total);
             setResult(RESULT_OK, checkout);
@@ -77,30 +83,35 @@ public class SecondActivity extends AppCompatActivity {
 
     @Override
     protected void onPause(){
+        //pauses the current state
         super.onPause();
         Log.d(LOG_TAG, "Second activity has been paused");
     }
 
     @Override
     protected void onRestart(){
+        //restarts the activity
         super.onRestart();
         Log.d(LOG_TAG, "Second activity is now restarting...");
     }
 
     @Override
     protected void onResume(){
+        //resumes the current state
         super.onResume();
         Log.d(LOG_TAG, "Second activity has resumed");
     }
 
     @Override
     protected void onStop(){
+        //stops the activity
         super.onStop();
         Log.d(LOG_TAG, "Second activity has stopped");
     }
 
     @Override
     protected void onDestroy(){
+        //destroys the current status
         super.onDestroy();
         Log.d(LOG_TAG, "Second activity has been destroyed");
     }

@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    //global text request and log
     public static final int TEXT_REQUEST = 1;
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
@@ -50,12 +51,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onStart(){
+        //starts the activity
         super.onStart();
         Log.d(LOG_TAG, "My shopping activity has started");
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState){
+        //saves current state of the activity
         super.onSaveInstanceState(outState);
         outState.putInt(RICE, rice);
         outState.putInt(PASTA, pasta);
@@ -76,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d(LOG_TAG, "Creating shopping activity...");
 
+        //Initialize the views
         add_rice = findViewById(R.id.shop_rice);
         add_pasta = findViewById(R.id.shop_pasta);
         add_apples = findViewById(R.id.shop_apples);
@@ -87,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
         add_tuna = findViewById(R.id.shop_tuna);
         add_salmon = findViewById(R.id.shop_salmon);
 
+        //restore activity state
         if(savedInstanceState != null){
             rice = savedInstanceState.getInt(RICE);
             pasta = savedInstanceState.getInt(PASTA);
@@ -100,27 +105,29 @@ public class MainActivity extends AppCompatActivity {
             salmon = savedInstanceState.getInt(SALMON);
         }
 
+        //initialize variables
         initialize();
     }
 
     public void initialize(){
         try{
-            add_rice.setText(Integer.valueOf(rice) + " Rice");
-            add_pasta.setText(Integer.valueOf(pasta) + " Pasta");
-            add_apples.setText(Integer.valueOf(apples) + " Apples");
-            add_oranges.setText(Integer.valueOf(oranges) + " Oranges");
-            add_wheat.setText(Integer.valueOf(wheat) + " Wheat");
-            add_flour.setText(Integer.valueOf(flour) + " Flour");
-            add_cereal.setText(Integer.valueOf(cereal) + " Cereal");
-            add_tomatoes.setText(Integer.valueOf(tomatoes) + " Tomatoes");
-            add_tuna.setText(Integer.valueOf(tuna) + " Tuna");
-            add_salmon.setText(Integer.valueOf(salmon) + " Salmon");
+            add_rice.setText(Integer.toString(rice) + " Rice");
+            add_pasta.setText(Integer.toString(pasta) + " Pasta");
+            add_apples.setText(Integer.toString(apples) + " Apples");
+            add_oranges.setText(Integer.toString(oranges) + " Oranges");
+            add_wheat.setText(Integer.toString(wheat) + " Wheat");
+            add_flour.setText(Integer.toString(flour) + " Flour");
+            add_cereal.setText(Integer.toString(cereal) + " Cereal");
+            add_tomatoes.setText(Integer.toString(tomatoes) + " Tomatoes");
+            add_tuna.setText(Integer.toString(tuna) + " Tuna");
+            add_salmon.setText(Integer.toString(salmon) + " Salmon");
         } catch (Exception e){
             e.getMessage();
         }
     }
 
     public void pickNewItem(View view) {
+        //launches the second activity for the shopping list
         Intent newItem = new Intent(this, SecondActivity.class);
         startActivityForResult(newItem, TEXT_REQUEST);
     }
@@ -131,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
             if(requestCode == TEXT_REQUEST){
                 if(resultCode == RESULT_OK){
                     String shopping = data.getStringExtra(SecondActivity.EXTRA_REPLY);
-
+                    //I use a for each loop to determine what the user clicked
                     for(int i = 0; i < shopping.length(); i++){
                         if(shopping.contains(RICE)){
                             rice += 1;
@@ -176,30 +183,35 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onPause(){
+        //pauses the current state
         super.onPause();
         Log.d(LOG_TAG, "Shopping activity list paused");
     }
 
     @Override
     protected void onRestart(){
+        //restarts the activity
         super.onRestart();
         Log.d(LOG_TAG, "Shopping activity list restarted");
     }
 
     @Override
     protected void onResume(){
+        //resumes the current state
         super.onResume();
         Log.d(LOG_TAG, "Shopping activity list resumed");
     }
 
     @Override
     protected void onStop(){
+        //stops the activity
         super.onStop();
         Log.d(LOG_TAG, "Shopping activity list stopped");
     }
 
     @Override
     protected void onDestroy(){
+        //destroys the current status
         super.onDestroy();
         Log.d(LOG_TAG, "Shopping activity list destroyed");
     }
